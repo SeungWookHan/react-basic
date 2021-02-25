@@ -3,16 +3,29 @@ import React from 'react';
 class BusinessName extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { brand: '한승욱짱' };
+    this.state = { brand: '한승욱짱', region: '경기' };
   }
+
+  changeBrand = () => {
+    this.setState({ brand: '승욱이' });
+  };
 
   render() {
     // const { brand } = this.props;
-    const { brand } = this.state;
+    const { brand, region } = this.state;
     return (
       <div>
         {/* <h1>hello, {brand}</h1> */}
-        <h1>hello, {brand}</h1>
+        <h1>
+          hello, {brand}, 사는 곳은 {region}
+        </h1>
+        <button
+          type="button"
+          className="btn btn-primary"
+          onClick={this.changeBrand}
+        >
+          Change Brand
+        </button>
       </div>
     );
   }
